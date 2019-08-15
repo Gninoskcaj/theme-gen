@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/Gninoskcaj/theme-gen/issues"
   },
-  "homepage": "https://github.com/Gninoskcaj/theme-gen#readme"
+  "homepage": "https://github.com/Gninoskcaj/theme-gen#readme",
+  "dependencies": {
+    "chalk": "^2.4.2"
+  }
 }
