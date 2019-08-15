@@ -1,8 +1,6 @@
-// Consts
 const fs = require('fs')
 const chalk = require('chalk')
 const writeFile = require('write')
-const getData = require('./getData')
 const prompts = require('prompts');
 const questions = [
     {
@@ -27,7 +25,7 @@ let foreground = '';
 let primary = '';
 
 function inputData() {
-    fs.readFile('theme.txt', (err, data) => {
+    fs.readFile(`${__dirname}/theme.txt`, (err, data) => {
         if (err) console.error(err)
         else console.log(data)
     })
@@ -38,5 +36,5 @@ function inputData() {
 // Write Files
 (async () => {
     const data = await prompts(questions)
-    // await writeFile('theme.txt', JSON.stringify(data.primary))
+    await writeFile('theme.txt', JSON.stringify(data.primary))
 })();
