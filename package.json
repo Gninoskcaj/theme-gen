@@ -6,6 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "bin": {
+    "gen": "bin/gen"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Gninoskcaj/theme-gen.git"
