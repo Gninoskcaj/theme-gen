@@ -9,14 +9,14 @@ const questions = [
     },
     {
         type: 'number',
-        name: 'backgroundBlue',
-        message: 'Background Blue:',
+        name: 'backgroundGreen',
+        message: 'Background Green:',
         initial: '0'
     },
     {
         type: 'number',
-        name: 'backgroundGreen',
-        message: 'Background Green:',
+        name: 'backgroundBlue',
+        message: 'Background Blue:',
         initial: '0'
     },
     {
@@ -27,14 +27,14 @@ const questions = [
     },
     {
         type: 'number',
-        name: 'foregroundBlue',
-        message: 'Foreground Blue:',
+        name: 'foregroundGreen',
+        message: 'Foreground Green:',
         initial: '0'
     },
     {
         type: 'number',
-        name: 'foregroundGreen',
-        message: 'Foreground Green:',
+        name: 'foregroundBlue',
+        message: 'Foreground Blue:',
         initial: '0'
     },
     {
@@ -45,14 +45,14 @@ const questions = [
     },
     {
         type: 'number',
-        name: 'primaryBlue',
-        message: 'Primary Blue:',
+        name: 'primaryGreen',
+        message: 'Primary Green:',
         initial: '0'
     },
     {
         type: 'number',
-        name: 'primaryGreen',
-        message: 'Primary Green:',
+        name: 'primaryBlue',
+        message: 'Primary Blue:',
         initial: '0'
     },
     {
@@ -105,17 +105,19 @@ const colors = ['background', 'foreground', 'primary', 'secondary', 'flash'];
     const results = await prompts(questions)
     var string = '';
 
+    console.log(results);
+
     // Loop through the numbers and colors
     for (let num = 1; num <= 100; num++) {
         colors.forEach(color => {
-            string += `--${color}-${num}:rgba(${results[`${color}Red`]}, ${results[`${color}Blue`]}, ${results[`${color}Green`]}, ${num / 100});`;
+            string += `--${color}-${num}:rgba(${results[`${color}Red`]}, ${results[`${color}Green`]}, ${results[`${color}Blue`]}, ${num / 100});`;
         })
     }
 
     // Finish off with the norm
     var normal = '';
     colors.forEach(color => {
-        normal += `--${color}:rgba(${results[`${color}Red`]}, ${results[`${color}Blue`]}, ${results[`${color}Green`]});`;
+        normal += `--${color}:rgba(${results[`${color}Red`]}, ${results[`${color}Green`]}, ${results[`${color}Blue`]});`;
     })
 
     // Write it to the file
